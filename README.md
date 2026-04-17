@@ -81,25 +81,36 @@ If you're also solving DSA problems, feel free to connect and collaborate! 🚀
 
 
 -------------------------------------------------------------------------------------
-🧠 Day 2
+## 🧠 Day 2
 
-🔹 Problem: 2551. Put Marbles in Bags
+🔹 **Problem:** 2551. Put Marbles in Bags
 🔗 https://leetcode.com/problems/put-marbles-in-bags/
 
-💡 Approach
-Instead of trying all partitions (which is expensive), we optimize using greedy + sorting
-Observed that total score depends on adjacent pair sums
-Created an array of all adjacent sums:
-weights[i] + weights[i+1]
-Sorted this array
+---
 
-For:
-Minimum score → pick smallest (k-1) values
-Maximum score → pick largest (k-1) values
-Return difference → max - min
+### 💡 Approach
 
-🔐 Key Concepts
-Greedy optimization
-Observational problem solving
-Adjacent pair contribution trick
-Sorting for efficient selection
+Instead of trying all partitions (which is expensive), we optimize using **greedy + sorting**.
+
+* Observed that total score depends on **adjacent pair sums**
+* Created an array of all adjacent sums:
+  `weights[i] + weights[i+1]`
+* Sorted this array
+
+Then:
+
+* **Minimum score →** pick smallest `(k-1)` values
+* **Maximum score →** pick largest `(k-1)` values
+* **Answer →** `max - min`
+
+---
+
+### 🔐 Key Concepts
+
+* Greedy optimization
+* Observational problem solving
+* Adjacent pair contribution trick
+* Sorting for efficient selection
+
+---
+
