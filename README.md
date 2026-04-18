@@ -113,4 +113,28 @@ Then:
 * Sorting for efficient selection
 
 ---
+----------------------------------------------------------------------------------
+🧠 Day 3
 
+🔹 Problem: Non-overlapping Intervals problem
+🔗 https://leetcode.com/problems/non-overlapping-intervals/
+---------------
+💡 Approach
+
+This problem is solved using a Greedy strategy.
+
+First, sort all intervals by their end time
+Why? → Choosing the interval that finishes earliest leaves more room for others
+
+Then:
+
+Keep a variable prevEnd (end of last selected interval)
+
+Traverse all intervals:
+If start < prevEnd → overlap → remove it (count++)
+Else → no overlap → update prevEnd
+-------
+🔐 Key Concepts
+Greedy Algorithm (Earliest Finish Time)
+Interval Scheduling Pattern
+Sorting for optimization
