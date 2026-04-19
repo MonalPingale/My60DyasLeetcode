@@ -138,3 +138,44 @@ Else → no overlap → update prevEnd
 Greedy Algorithm (Earliest Finish Time)
 Interval Scheduling Pattern
 Sorting for optimization
+
+---------------------------------------------------------------------------------
+🧠 Day 4
+
+🔹 Problem: 2483. Minimum Penalty for a Shop
+🔗 https://leetcode.com/problems/minimum-penalty-for-a-shop/
+
+💡 Approach
+
+This problem is solved using a prefix + suffix optimization approach.
+
+Instead of checking all closing times separately, we track penalties efficiently:
+
+Left side (shop open) → count of 'N' (no customers but shop open → penalty)
+Right side (shop closed) → count of 'Y' (customers came but shop closed → penalty)
+
+So,
+
+Penalty = leftN + rightY
+
+⚙️ Steps
+Count total 'Y' → this is initial rightY (when shop closes at 0)
+
+Initialize:
+leftN = 0
+minPenalty = rightY
+answer = 0
+
+Traverse the string:
+If 'Y' → decrease rightY
+If 'N' → increase leftN
+
+At every step:
+Calculate penalty = leftN + rightY
+Update minimum penalty and index
+------------------------------------------------
+🔐 Key Concepts
+Prefix & Suffix counting
+Greedy observation
+Optimizing brute force
+String traversal
