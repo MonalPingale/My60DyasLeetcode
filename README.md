@@ -179,3 +179,67 @@ Prefix & Suffix counting
 Greedy observation
 Optimizing brute force
 String traversal
+
+
+----------------------------------------------------------------------------------------------
+🧠 Day 5
+
+🔹 Problem: 1282. Group the People Given the Group Size They Belong To
+🔗 https://leetcode.com/problems/group-the-people-given-the-group-size-they-belong-to/
+
+💡 Approach
+
+This problem is solved using HashMap + Greedy grouping.
+
+👉 Each person tells the size of the group they belong to
+👉 We need to form groups accordingly
+
+📌 Problem Understanding (In Simple Words)
+
+You are given an array groupSizes where:
+
+groupSizes[i] = size of group for person i
+
+🎯 Goal:
+Form groups such that:
+
+✔ Each group has exactly required size
+✔ Each person appears in exactly one group
+
+💡 My Thought Process 🧠
+
+At first, I thought:
+👉 Try forming groups manually
+
+But realized:
+❌ Managing groups without structure is messy
+
+So I used a map…
+
+🔍 Key Insight
+
+👉 People with same group size should be grouped together
+
+👉 Use:
+
+size → list of people
+
+👉 Once list size == required group size
+➡️ Add it to answer & reset
+
+🚀 Approach
+
+Create a HashMap:
+
+groupSize → list of indices
+Traverse array:
+Add person index to corresponding list
+If list size == group size:
+Add list to answer
+Reset list
+🔐 Key Concepts
+
+✔ HashMap grouping
+✔ Greedy formation
+✔ Bucket filling technique
+✔ Index-based grouping
