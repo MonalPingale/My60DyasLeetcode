@@ -243,3 +243,63 @@ Reset list
 ✔ Greedy formation
 ✔ Bucket filling technique
 ✔ Index-based grouping
+
+
+--------------------------------------------------------------
+🧠 Day 6
+🔹 Problem: 126. Word Ladder II
+
+🔗 https://leetcode.com/problems/word-ladder-ii/
+
+📌 Problem Understanding
+
+Given:
+
+beginWord
+endWord
+wordList
+
+We need to find all shortest transformation sequences such that:
+
+✔ Only one letter changes at a time
+✔ Each intermediate word must be in wordList
+✔ Final word must be endWord
+--------------------------------------------
+💡 Approach
+
+This problem is solved using a combination of:
+
+👉 BFS (for shortest path)
+👉 DFS (to build all paths)
+-------------------------------------------
+🔍 Key Idea
+
+1.BFS Phase
+Find shortest distance of each word from beginWord
+Store in levelMap
+
+2. DFS Phase
+Start from endWord
+Go backward using levelMap
+
+Build all valid shortest paths
+----------------------------
+⚙️ Steps
+BFS:
+Use queue
+For each word → generate all possible transformations
+Store level (distance)
+Stop when endWord is reached
+
+DFS:
+Start from endWord
+Move to words with level - 1
+Build path recursively
+Reverse path at the end
+-------------------------------
+🔐 Key Concepts
+1.BFS for shortest path
+2.DFS for path generation
+3.Backtracking
+4.HashMap for level tracking
+5.String transformation
