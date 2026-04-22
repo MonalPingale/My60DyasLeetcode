@@ -303,3 +303,47 @@ Reverse path at the end
 3.Backtracking
 4.HashMap for level tracking
 5.String transformation
+
+
+---------------------------------------------------------------------------------------
+🧠 Day 7
+🔹 Problem: 905. Sort Array By Parity
+
+🔗 https://leetcode.com/problems/sort-array-by-parity/
+
+📌 Problem Understanding
+
+Given an array nums:
+
+👉 Move all even numbers first
+👉 Then all odd numbers
+
+✔ Order doesn’t matter
+
+💡 Approach
+
+This problem is solved using Two Pointer technique.
+
+👉 Use two pointers:
+
+l → start
+r → end
+🔍 Key Idea
+If right side has even → swap with left
+Else → move right pointer
+
+👉 This ensures:
+✔ Even numbers go to front
+✔ Odd numbers move to back
+
+⚙️ Steps
+Initialize:
+l = 0
+r = n - 1
+While l <= r:
+If nums[r] is even → swap with nums[l], l++
+Else → r--
+🔐 Key Concepts
+Two Pointer technique
+In-place swapping
+Array partitioning
