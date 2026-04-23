@@ -347,3 +347,69 @@ Else → r--
 Two Pointer technique
 In-place swapping
 Array partitioning
+
+
+
+
+
+
+
+
+----------------------------------------
+)
+🧠 Day 8
+🔹 Problem: Shortest Distance in a Binary Maze
+
+🔗 https://practice.geeksforgeeks.org/problems/shortest-distance-in-a-binary-maze/
+
+📌 Problem Understanding
+
+You are given a grid where:
+
+1 → valid cell (you can move)
+0 → blocked cell (cannot move)
+
+👉 You are also given:
+
+source
+destination
+
+🎯 Goal:
+Find the shortest distance from source to destination
+
+✔ Move only in 4 directions (Up, Down, Left, Right)
+✔ If path not possible → return -1
+
+💡 Approach
+
+This problem is solved using Dijkstra’s Algorithm (Shortest Path).
+
+👉 Since each move has equal weight (1),
+👉 It behaves similar to BFS, but we used Priority Queue
+
+🔍 Key Idea
+
+Use a min-heap (PriorityQueue)
+Always process the shortest distance first
+Maintain a dist[][] array
+
+⚙️ Steps
+1. Initialize:
+2. Distance array with INF
+3. Priority Queue → (distance, row, col)
+4.Start from source:
+dist[source] = 0
+5. Traverse:
+6. Pop smallest distance cell
+7. Explore 4 directions
+8. If shorter path found:
+Update distance
+Push into queue
+9. If destination reached → return distance
+
+
+🔐 Key Concepts
+Dijkstra Algorithm
+Priority Queue (Min Heap)
+Grid traversal
+Shortest Path
