@@ -413,3 +413,61 @@ Dijkstra Algorithm
 Priority Queue (Min Heap)
 Grid traversal
 Shortest Path
+
+
+--------------------------------------------------------
+🧠 Day 9
+🔹 Problem: 1503. Last Moment Before All Ants Fall Out of a Plank
+
+🔗 https://leetcode.com/problems/last-moment-before-all-ants-fall-out-of-a-plank/
+
+📌 Problem Understanding
+
+You are given:
+
+A plank of length n
+Ants moving:
+Left (left[])
+Right (right[])
+
+Rules:
+
+✔ Speed = 1 unit/sec
+✔ When ants collide → they just change direction
+✔ When ant reaches end → falls
+
+🎯 Goal:
+Find the last moment when any ant is still on the plank
+
+💡 Approach
+
+👉 Key observation:
+
+Collision doesn’t matter ❗
+
+Why?
+
+👉 Instead of changing direction,
+we can assume ants pass through each other
+
+➡️ Result remains SAME
+
+🔍 Key Idea
+Ant moving left → time = position
+Ant moving right → time = n - position
+
+👉 So answer =
+
+max( max(left[i]), max(n - right[i]) )
+
+⚙️ Steps
+1.Initialize max = 0
+2.For all ants moving left:
+3.Take maximum position
+4.For all ants moving right:
+5.Take maximum (n - position)
+6.Return max
+
+🔐 Key Concepts
+Greedy observation
+Collision simplification
