@@ -471,3 +471,49 @@ max( max(left[i]), max(n - right[i]) )
 🔐 Key Concepts
 Greedy observation
 Collision simplification
+
+--------------------------------------------------
+🧠 Day 10
+🔹 Problem: 1887. Reduction Operations to Make the Array Elements Equal
+
+🔗 https://leetcode.com/problems/reduction-operations-to-make-the-array-elements-equal/
+
+📌 Problem Understanding
+
+You are given an array nums.
+
+👉 In one operation:
+
+Pick the largest element
+Reduce it to the next smaller distinct element
+
+🎯 Goal:
+Make all elements equal using minimum operations
+
+💡 Approach
+
+This problem is solved using Sorting + Greedy.
+
+👉 Instead of simulating operations,
+👉 We count how many times each level needs reduction
+
+🔍 Key Idea
+Sort the array
+Traverse from right to left
+
+👉 Whenever we find a new smaller element,
+➡️ All elements greater than it need operations
+
+⚙️ Steps
+Sort array
+Start from second last element
+
+If nums[i] != nums[i+1]:
+
+operations += (n - i - 1)
+Continue till start
+
+🔐 Key Concepts
+Sorting
+Greedy counting
+Observational optimization
