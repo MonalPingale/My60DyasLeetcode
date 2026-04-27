@@ -513,7 +513,117 @@ If nums[i] != nums[i+1]:
 operations += (n - i - 1)
 Continue till start
 
+
+-------------------------------------------
+🧠 Day 11
+🔹 Problem: Bellman-Ford Algorithm
+
+🔗 https://practice.geeksforgeeks.org/problems/distance-from-the-source-bellman-ford-algorithm/
+
+📌 Problem Understanding
+
+You are given:
+
+V → number of vertices
+edges[][] → each edge = [u, v, wt]
+src → source node
+
+🎯 Goal:
+Find shortest distance from source to all vertices
+
+⚠️ Special Condition
+
+👉 If graph contains negative weight cycle
+➡️ Return [-1]
+
+💡 Approach
+
+This problem is solved using Bellman-Ford Algorithm.
+
+👉 Unlike Dijkstra, it works with:
+✔ Negative weights
+✔ Detects negative cycles
+
+🔍 Key Idea
+Relax all edges V-1 times
+Then check one more time:
+If still relaxing → negative cycle exists
+⚙️ Steps
+
+Initialize:
+
+dist[] = INF
+dist[src] = 0
+
+Relax edges V-1 times:
+
+if dist[u] + wt < dist[v]
+    update dist[v]
+
+Check for negative cycle:
+
+if still relaxable → return [-1]
+
+🔐 Key Concepts
+Bellman-Ford Algorithm
+Edge relaxation
+Negative cycle detection
+Graph shortest path
+
 🔐 Key Concepts
 Sorting
 Greedy counting
 Observational optimization
+------------------------------------------
+
+🧠 Day 12
+🔹 Problem: 1630. Arithmetic Subarrays
+
+🔗 https://leetcode.com/problems/arithmetic-subarrays/
+
+📌 Problem Understanding
+
+You are given:
+
+Array nums
+Queries: l[i] to r[i]
+
+👉 For each query:
+Check if subarray can be rearranged into an arithmetic sequence
+
+💡 Approach
+
+Instead of sorting every time ❌
+👉 Use Math + HashSet optimization ✅
+
+🔍 Key Idea
+
+For an arithmetic sequence:
+
+max - min = (n - 1) * diff
+
+👉 So:
+
+Find min and max
+Check if:
+(max - min) % (n - 1) == 0
+Compute:
+diff = (max - min) / (n - 1)
+Check all expected elements exist:
+min, min+diff, min+2*diff ...
+
+⚙️ Steps
+For each query:
+Extract subarray
+Store elements in set
+Find:
+min
+max
+Validate arithmetic condition
+Check presence of all expected values
+
+🔐 Key Concepts
+HashSet lookup
+Arithmetic progression
+Mathematical validation
+Optimization over sorting
