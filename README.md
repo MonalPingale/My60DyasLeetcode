@@ -627,3 +627,61 @@ HashSet lookup
 Arithmetic progression
 Mathematical validation
 Optimization over sorting
+
+----------------------------------------------------
+🧠 Day 13
+🔹 Problem: Bridge Edge in a Graph
+
+🔗 https://practice.geeksforgeeks.org/problems/bridge-edge-in-a-graph/
+
+📌 Problem Understanding
+
+You are given:
+
+V → number of vertices
+edges[][] → undirected graph
+Edge (c, d)
+
+🎯 Goal:
+Check whether (c, d) is a bridge edge
+
+💡 What is a Bridge?
+
+👉 An edge is a bridge if:
+
+✔ Removing it increases number of connected components
+✔ There is no alternate path between its nodes
+
+💡 Approach
+
+This problem is solved using DFS + Tarjan’s Algorithm.
+
+👉 Use two arrays:
+
+tin[] → time of insertion
+low[] → lowest reachable time
+🔍 Key Idea
+
+For an edge (u, v):
+
+if (low[v] > tin[u]) → bridge
+
+👉 Means:
+There is no back-edge from v to ancestors of u
+
+⚙️ Steps
+1. Build adjacency list
+2. Run DFS for all components
+3. Track:
+  tin[]
+  low[]
+4. Check bridge condition
+5. Store all bridges
+6. Check if (c, d) exists
+
+---------------------------
+🔐 Key Concepts
+DFS traversal
+Tarjan’s Algorithm
+Low & tin arrays
+Bridge detection
