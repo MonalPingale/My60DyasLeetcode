@@ -680,6 +680,48 @@ There is no back-edge from v to ancestors of u
 6. Check if (c, d) exists
 
 ---------------------------
+
+🧠 Day 15
+🔹 Problem: 1637. Widest Vertical Area Between Two Points Containing No Points
+
+🔗 https://leetcode.com/problems/widest-vertical-area-between-two-points-containing-no-points/
+
+📌 Problem Understanding
+
+You are given a list of points on a 2D plane:
+
+Each point = [x, y]
+
+🎯 Goal:
+Find the maximum width between two vertical lines such that no points lie in between
+
+👉 Only x-coordinate matters
+👉 y-coordinate is irrelevant
+
+💡 Approach
+
+This problem is solved using Sorting.
+
+👉 Sort points based on x-coordinate
+👉 Then find maximum gap between consecutive x values
+
+🔍 Key Idea
+After sorting:
+gap = points[i][0] - points[i-1][0]
+
+👉 Maximum gap = answer
+
+⚙️ Steps
+Sort points based on x
+Initialize maxGap = 0
+Traverse from index 1:
+Calculate difference with previous point
+Update max
+
+🔐 Key Concepts
+Sorting
+Greedy observation
+Coordinate-based thinking
 🔐 Key Concepts
 DFS traversal
 Tarjan’s Algorithm
