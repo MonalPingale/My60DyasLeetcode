@@ -727,3 +727,149 @@ DFS traversal
 Tarjan’s Algorithm
 Low & tin arrays
 Bridge detection
+-------------------------------------------------
+🧠 Day 16
+🔹 Problem: 2402. Meeting Rooms III
+
+🔗 https://leetcode.com/problems/meeting-rooms-iii/
+
+📌 Problem Understanding
+
+You are given:
+
+n rooms
+meetings[i] = [start, end]
+
+Rules:
+
+✔ Use smallest available room
+✔ If no room → delay meeting
+✔ Maintain same duration
+
+🎯 Goal:
+Find room with maximum meetings
+
+💡 Approach
+
+This problem is solved using Two Priority Queues:
+
+👉 freeRooms → available rooms
+👉 busyRooms → occupied rooms (endTime, roomNo)
+
+🔍 Key Idea
+Always assign smallest room number
+Free rooms before assigning
+Delay meeting if needed
+
+⚙️ Steps
+1.Sort meetings by start time
+2.Free rooms whose meeting ended
+3.If free room available:
+     Assign directly
+   Else:
+      Delay meeting
+4.Track count per room
+
+🔐 Key Concepts
+Priority Queue
+Greedy scheduling
+
+Simulation
+💻 Java Code
+
+--------------------------
+
+⚡ What I Learned
+
+👉 Scheduling problems = heap + greedy
+👉 Two PQs handle real-time simulation
+👉 Clean handling of delays
+
+📈 Time Complexity
+O(n log n)
+💭 My Experience
+
+Initially confusing 😅
+
+But once I separated:
+👉 free rooms
+👉 busy rooms
+
+Everything became clear ✨
+
+-------------------------------------------
+🧠 Day 17
+🔹 Problem: 3034. Number of Subarrays That Match a Pattern I
+
+🔗 https://leetcode.com/problems/number-of-subarrays-that-match-a-pattern-i/
+
+📌 Problem Understanding
+
+You are given:
+
+nums[]
+pattern[] (-1, 0, 1)
+
+Rules:
+
+1 → increasing
+0 → equal
+-1 → decreasing
+
+🎯 Goal:
+Count subarrays matching pattern
+
+💡 Approach
+
+This problem is solved using sliding window / brute force check.
+
+👉 Check every subarray of size m+1
+
+🔍 Key Idea
+
+Compare adjacent elements:
+
+nums[i+k+1] vs nums[i+k]
+
+⚙️ Steps
+1.Loop over all possible start indices
+2.For each window:
+3.Check pattern
+4.Count valid matches
+
+
+🔐 Key Concepts
+Sliding window
+Pattern matching
+Array comparison
+
+
+
+⚡ What I Learned
+
+👉 Pattern-based problems need careful comparison
+👉 Window traversal is very useful
+👉 Simple logic but detail-oriented
+
+📈 Time Complexity
+O(n × m)
+💭 My Experience
+
+Initially, edge cases tricky वाटले 😅
+
+But step-by-step comparison made it easy ✨
+
+🚀 LinkedIn Post (Day 16)
+
+🚀 Day 16 — #60DaysLeetCodeChallenge
+
+🔹 Problem: 2402. Meeting Rooms III
+
+💡 Solved using Priority Queue + Greedy Scheduling
+
+👉 Used two heaps:
+
+Free rooms
+Busy rooms
+
+🔥 Learned how to handle real-time scheduling and delays
