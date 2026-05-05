@@ -873,3 +873,48 @@ Free rooms
 Busy rooms
 
 🔥 Learned how to handle real-time scheduling and delays
+----------------------------------------------------------
+🧠 Day 18
+🔹 Problem: 525. Contiguous Array
+
+🔗 https://leetcode.com/problems/contiguous-array/
+
+📌 Problem Understanding
+
+You are given a binary array nums:
+
+👉 Contains only 0 and 1
+
+🎯 Goal:
+Find the maximum length subarray with equal number of 0 and 1
+
+💡 Approach
+
+This problem is solved using Prefix Sum + HashMap.
+
+👉 Trick:
+
+Convert 0 → -1
+Keep 1 → +1
+🔍 Key Idea
+
+If at two indices, prefix sum is same:
+
+👉 That subarray has equal 0 and 1
+
+⚙️ Steps
+1.Initialize:
+2.map.put(0, -1) (important)
+3.Traverse array:
+4.If 0 → add -1
+5.If 1 → add +1
+6.If prefix sum already exists:
+7.Calculate length
+8Update max length
+
+
+
+🔐 Key Concepts
+Prefix Sum
+HashMap
+Subarray pattern
