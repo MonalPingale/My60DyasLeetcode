@@ -918,3 +918,94 @@ If at two indices, prefix sum is same:
 Prefix Sum
 HashMap
 Subarray pattern
+
+
+------------------------------
+🧠 Day 19
+🔹 Problem: 1992. Find All Groups of Farmland
+
+🔗 https://leetcode.com/problems/find-all-groups-of-farmland/
+
+📌 Problem Understanding
+
+You are given a binary matrix land:
+
+1 → farmland
+0 → forest land
+
+🎯 Goal:
+Find all rectangular groups of farmland
+
+For each group return:
+
+[topRow, leftCol, bottomRow, rightCol]
+💡 Approach
+
+This problem is solved using DFS (Depth First Search).
+
+👉 Whenever we find an unvisited farmland cell (1):
+
+Start DFS
+Explore all connected farmland cells
+Track bottom-right corner
+
+🔍 Key Idea
+Each connected farmland forms one rectangle
+DFS helps visit the whole group
+
+Track:
+maximum row
+maximum column
+
+⚙️ Steps
+ 1. Traverse matrix
+ 2. If cell = 1 and unvisited:
+ 3. Start DFS
+ 4. Mark all connected cells visited
+ 5. Store rectangle coordinates
+ 6. 
+🔐 Key Concepts
+DFS traversal
+Matrix traversal
+Connected components
+
+-------------------------------------------
+🧠 Day 20
+🔹 Problem: 1248. Count Number of Nice Subarrays
+
+🔗 https://leetcode.com/problems/count-number-of-nice-subarrays/
+
+📌 Problem Understanding
+
+A subarray is called nice if it contains exactly k odd numbers.
+
+🎯 Goal:
+Count total nice subarrays
+
+💡 Approach
+
+This problem is solved using:
+
+👉 Prefix Sum + HashMap
+
+🔍 Key Idea
+Track count of odd numbers
+If:
+oddCount - k
+
+already exists in map,
+then a valid subarray is found
+
+⚙️ Steps
+Initialize:
+map.put(0,1)
+Traverse array:
+If odd → increment oddCount
+Add:
+map.getOrDefault(oddCount-k,0)
+Update map frequency
+
+🔐 Key Concepts
+Prefix Sum
+HashMap frequency
+Subarray counting
