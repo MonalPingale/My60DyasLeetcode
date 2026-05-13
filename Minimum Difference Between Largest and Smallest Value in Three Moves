@@ -1,10 +1,5 @@
 1509. Minimum Difference Between Largest and Smallest Value in Three Moves
-Solved
-Medium
-Topics
-premium lock icon
-Companies
-Hint
+
 You are given an integer array nums.
 
 In one move, you can choose one element of nums and change it to any value.
